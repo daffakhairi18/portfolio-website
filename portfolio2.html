@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SCRIPT -->
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const bars = document.querySelectorAll(".skill-bar");
+
+    bars.forEach(bar => {
+      const targetWidth = bar.getAttribute("data-width");
+      bar.style.width = "0%";
+      setTimeout(() => {
+        bar.style.width = targetWidth;
+      }, 500); // Delay sebelum animasi mulai
+    });
+  });
+</script>
+
+<!-- CDN Devicion -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+<!--Font Awesome-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daffa Khairi Albaihaqi - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+        
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card-glass {
+            background: rgba(15, 15, 15, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+            transition: width 1s ease-in-out;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: -23px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 219, 222, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 219, 222, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 219, 222, 0); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid #00dbde;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 2px;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #00dbde }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Floating Background Elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-1/4 w-4 h-4 rounded-full bg-purple-500 opacity-20 floating" style="animation-delay: 0s;"></div>
+        <div class="absolute top-1/3 right-1/3 w-6 h-6 rounded-full bg-cyan-500 opacity-20 floating" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-8 h-8 rounded-full bg-purple-500 opacity-20 floating" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-1/3 left-1/3 w-5 h-5 rounded-full bg-cyan-500 opacity-20 floating" style="animation-delay: 3s;"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 pt-24 relative z-10">
+
+        <!-- Header -->
+        <header class="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-md z-50 flex justify-between items-center px-4 py-4">
+            <div class="text-2xl font-bold gradient-text">DKA</div>
+            <nav class="hidden md:flex space-x-12">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">Profile</a>
+                <a href="#education" class="hover:text-cyan-400 transition-colors">Pendidikan</a>
+                <a href="#experience" class="hover:text-cyan-400 transition-colors">Pengalaman</a>
+                <a href="#Projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#Sertifikat" class="hover:text-cyan-400 transition-colors">Sertifikat</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Kontak</a>
+            </nav>
+            <button class="md:hidden text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </header>
+
+
+        <!-- Hero Section -->
+        <section class="flex flex-col md:flex-row items-center justify-between mb-20">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                    <span class="gradient-text">Daffa Khairi</span><br>
+                    <span class=>Albaihaqi</span>
+                </h1>
+                <p class="text-xl mb-6">Web Developer & IT Enthusiast</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full font-medium hover:opacity-90 transition-opacity">
+                        Contact Me
+                    </a>
+                    <a href="#about" class="px-6 py-3 border border-white rounded-full font-medium hover:bg-white hover:text-black transition-colors">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-cyan-400 pulse">
+                        <img src="img/fotodapak.jpeg" alt="Foto Profil" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="mb-20">
+            <h2 class="text-3xl font-bold mb-8 gradient-text text-center">Profile</h2>
+            <div class="max-w-7xl mx-auto card-glass rounded-2xl p-8 hover-scale">
+                <p class="text-lg leading-relaxed">
+                    Mahasiswa aktif semester 6 Program Studi Teknik Informatika di Universitas 
+                    Pancasila, dengan minat kuat dalam pengembangan web dan teknologi komputer. 
+                    Memiliki inisiatif tinggi, kemampuan beradaptasi, serta keterampilan berpikir kritis dan 
+                    kreatif. Menguasai beberapa tools dan bahasa pemrograman seperti C++, JavaScript, 
+                    Visual Studio Code, serta familiar dengan Figma dan Canva. Berkomitmen untuk terus 
+                    belajar dan berkontribusi dalam proyek-proyek IT, khususnya di bidang 
+                    pengembangan aplikasi web. 
+                </p>
+            </div>
+        </section>
+
+        <!-- Tombol Unduh CV di Tengah -->
+    <div class="text-center my-10">
+    <a href="https://drive.google.com/file/d/1vDaHOn6V5E3x1NtBsYkWpnfFt-B9aiSr/view?usp=drive_link" 
+     class="btn-download inline-block px-6 py-3 bg-cyan-500 text-white font-semibold rounded-xl hover:bg-cyan-600 transition duration-300" 
+     target="_blank">
+    📝 Unduh CV Saya
+    </a>
+    </div>
+
+
+        <!-- Education Section -->
+        <section id="education" class="mb-20">
+            <h2 class="text-3xl font-bold mb-8 gradient-text text-center">Pendidikan</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card-glass rounded-2xl p-8 hover-scale">
+                    <h3 class="text-xl font-bold mb-2">SMAN 6 TANGERANG SELATAN</h3>
+                    <p class="text-cyan-400 mb-4">Ilmu Pengetahuan Sosial (IPS)</p>
+                    <span class="text-sm bg-gradient-to-r from-cyan-500 to-purple-600 px-3 py-1 rounded-full">2019-2022</span>
+                </div>
+                <div class="card-glass rounded-2xl p-8 hover-scale">
+                    <h3 class="text-xl font-bold mb-2">UNIVERSITAS PANCASILA</h3>
+                    <p class="text-cyan-400 mb-4">S1-Teknik Informatika</p>
+                    <span class="text-sm bg-gradient-to-r from-cyan-500 to-purple-600 px-3 py-1 rounded-full">2022-Present</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="mb-20">
+            <h2 class="text-3xl font-bold mb-8 gradient-text text-center">Pengalaman</h2>
+            <div class="relative pl-8 timeline">
+                <!-- Experience 1 -->
+                <div class="relative mb-12 timeline-item">
+                    <div class="card-glass rounded-2xl p-8 hover-scale">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Panitia Kelas Organisasi Mahasiswa Teknik Informatika</h3>
+                        </div>
+                        <p class="text-cyan-400 mb-4">Bertugas dalam Divisi Acara dan Perlengkapan</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Bertanggung jawab dan berperan dalam persiapan serta pelaksanaan kegiatan pelatihan organisasi, dengan tujuan meningkatkan pemahaman mahasiswa terhadap organisasi internal kampus, khususnya bagi calon anggota himpunan </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="relative mb-12 timeline-item">
+                    <div class="card-glass rounded-2xl p-8 hover-scale">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Kontribusi pada Proyek Website</h3>
+                        </div>
+                        <p class="text-cyan-400 mb-4">Kontributor Front-End – Proyek Website</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Membantu mengembangkan tampilan website menggunakan HTML dan CSS </li>
+                            <li>Implemented layout based on Figma designs</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div class="relative timeline-item">
+                    <div class="card-glass rounded-2xl p-8 hover-scale">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Freelance Social Media Content Designer</h3>
+                        </div>
+                        <p class="text-cyan-400 mb-4">Desainer Konten Sosial Media teman</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Mendesain 5 konten promosi menggunakan Canva untuk akun Instagram usaha teman</li>
+                            <li>Mempelajari elemen desain visual dan copywriting sederhana </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Projects Section -->
+    <section id="Projects" class="mb-20">
+  <h2 class="text-3xl font-bold mb-10 gradient-text text-center">Projects</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <!-- Project Card 1 -->
+  <div class="card-glass rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300">
+    <div class="relative w-full overflow-hidden rounded-xl mb-4">
+      <img src="img/rumahilmu1.png" alt="Rumah Ilmu" class="block w-full">
+      <img src="img/rumahilmu2.png" alt="Rumah Ilmu Hover" class="absolute top-0 left-0 w-full h-full object-cover opacity-0 hover:opacity-100 transition-opacity duration-300">
+    </div>
+    <h3 class="text-lg font-semibold text-cyan-400 mb-2">Pembuatan Website dan Aplikasi Bimbingan Belajar Rumah ke Rumah untuk Rumah Ilmu</h3>
+    <p class="text-gray-200 text-sm">
+      Proyek ini berfokus pada pembuatan platform digital berbasis web dan mobile yang memfasilitasi layanan bimbingan belajar privat ke rumah. Fitur utama mencakup pencarian dan pemesanan tutor, penjadwalan sesi belajar, manajemen akun siswa dan tutor, serta pelaporan hasil belajar untuk meningkatkan efisiensi dan kenyamanan proses belajar mengajar. 
+    </p>
+  </div>
+
+  <!-- Project Card 2 -->
+  <div class="card-glass rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300">
+    <img src="img/gigsnchill.png" alt="Gigsnchill" class="rounded-xl mb-4 w-full object-cover">
+    <h3 class="text-lg font-semibold text-cyan-400 mb-2">Pembuatan Website Penjualan Tiket Konser berbasis Web GigsNChill</h3>
+    <p class="text-gray-200 text-sm">
+      Proyek ini mengembangkan platform penjualan tiket konser secara online dengan tampilan antarmuka yang responsif dan user-friendly. Website ini memungkinkan pengguna untuk melihat jadwal event, memesan tiket, memilih kategori tempat duduk, serta melakukan pembayaran secara digital. Sistem ini juga dilengkapi fitur notifikasi dan dashboard admin untuk pengelolaan event dan data penjualan.
+    </p>
+  </div>
+
+  <!-- Project Card 3 -->
+  <div class="card-glass rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300">
+    <img src="img/vintagein.png" alt="Vintagein" class="rounded-xl mb-4 w-full object-cover">
+    <img src="img/vintagein2.png" alt="Vintagein" class="absolute top-0 left-0 w-full h-full object-cover opacity-0 hover:opacity-100 transition-opacity duration-300">
+    <h3 class="text-lg font-semibold text-cyan-400 mb-2">Merancang dan Membuat Website Penjualan Thrift Shop VintageIn</h3>
+    <p class="text-gray-200 text-sm">
+      Proyek ini bertujuan membangun website e-commerce untuk penjualan pakaian bekas berkualitas (thrift) dengan konsep vintage. Website ini dilengkapi fitur katalog produk, pencarian, filter kategori, keranjang belanja, checkout, dengan Desain antarmuka dibuat menarik dengan tema yang cukup modern untuk meningkatkan pengalaman pengguna.
+    </p>
+  </div>
+
+  <!-- Project Card 4 -->
+  <div class="card-glass rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300">
+    <img src="img/sistem_informasi_akademi.png" alt="Sistem Informasi Akademi" class="rounded-xl mb-4 w-full object-cover">
+    <h3 class="text-lg font-semibold text-cyan-400 mb-2">Merancang Sistem Informasi Akademik di Kampus</h3>
+    <p class="text-gray-200 text-sm">
+      Proyek ini mengembangkan sistem terintegrasi untuk mengelola data akademik di lingkungan kampus. Fitur utama mencakup pengelolaan data mahasiswa, jadwal perkuliahan, KRS, nilai, laporan akademik dan sebagainya. Sistem ini dirancang untuk memudahkan pihak kampus dalam administrasi akademik sekaligus memberikan akses informasi yang efisien bagi mahasiswa dan dosen.
+    </p>
+  </div>
+
+  <!-- Project Card 5 -->
+  <div class="card-glass rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300">
+    <img src="img/projek_inferple.png" alt="Inferple Project" class="rounded-xl mb-4 w-full object-cover">
+    <h3 class="text-lg font-semibold text-cyan-400 mb-2">Pembuatan Website Band Inferple</h3>
+    <p class="text-gray-200 text-sm">
+      Proyek ini merupakan pembuatan website resmi untuk band Inferple yang berfungsi sebagai media gallery dan dokumentasi kegiatan band. Website ini memuat profil band, galeri foto dan video panggung, jadwal manggung. Desain website disesuaikan dengan identitas visual yang sangat gelap.".
+    </p>
+  </div>
+
+  <!-- Project Card 6 -->
+  <div class="card-glass rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300">
+    <img src="img/flyurface.jpeg" alt="Fly Ur Face Game" class="rounded-xl mb-4 w-full object-cover">
+    <h3 class="text-lg font-semibold text-cyan-400 mb-2">Pembuatan Game Fly Ur Face – Game Sederhana</h3>
+    <p class="text-gray-200 text-sm">
+      Proyek ini merupakan pengembangan game sederhana berbasis visual story yang mengusung tema karakter wajah dengan elemen humor dan tantangan interaktif. Game ini dirancang untuk memberikan hiburan ringan dengan gameplay yang mudah dipahami, namun tetap menarik. Pemain diajak menyelesaikan misi atau tantangan dengan karakter wajah unik yang bisa terbang dan berinteraksi dengan berbagai objek di dalam permainan. Proyek ini difokuskan pada aspek visual, interaksi pengguna, dan storytelling ringan yang menghibur.
+    </p>
+  </div>
+
+  <!-- Project Card 7 -->
+  <div class="card-glass rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300">
+    <img src="img/desain_inferple.png" alt="Desain Inferple" class="rounded-xl mb-4 w-full object-cover">
+    <h3 class="text-lg font-semibold text-cyan-400 mb-2">MenDesain Poster Band Inferple</h3>
+    <p class="text-gray-200 text-sm">
+      Desain ini hanya berfokus pada pembuatan berbagai desain poster untuk keperluan dalam Postingan dalam Sosial Media, khususnya di Instagram. Desain poster disesuaikan dengan identitas visual dan karakter musik band, dengan gaya visual yang kuat dan ekspresif. Proyek ini juga mencakup eksplorasi tipografi, komposisi warna dengan menggunakan elemen warna gelap.
+    </p>
+  </div>
+
+  <!-- Project Card 8 -->
+  <div class="card-glass rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300">
+    <div class="relative w-full overflow-hidden rounded-xl mb-4">
+      <img src="img/desain_setlist.png" alt="Desain Setlist" class="block w-full">
+      <img src="img/desain_setlist2.png" alt="Desain Setlist Hover" class="absolute top-0 left-0 w-full h-full object-cover opacity-0 hover:opacity-100 transition-opacity duration-300">
+    </div>
+    <h3 class="text-lg font-semibold text-cyan-400 mb-2">MenDesain Visual Setlist sebelum manggung</h3>
+    <p class="text-gray-200 text-sm">
+      Desain ini dibuat untuk membuat desain setlist yang tidak hanya berfungsi sebagai panduan lagu saat tampil, juga memiliki nilai visual yang estetis dan selaras dengan konsep panggung. Setlist dirancang dengan layout yang jelas, pemilihan warna dan elemen grafis, serta mudah dibaca oleh seluruh personel band di atas panggung. 
+    </p>
+  </div>
+</div>
+
+</section>
+
+        <!-- Certificates Section -->
+        <section id="Sertifikat" class="mb-20">
+        <h2 class="text-3xl font-bold mb-8 gradient-text text-center">Sertifikat</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            
+            <!-- Sertifikat 1 -->
+            <div class="card-glass rounded-2xl p-8 hover-scale">
+            <h3 class="text-xl font-bold mb-2">TECHNO IT – IMATIKA FT-KMUP</h3>
+            <a 
+                href="https://drive.google.com/file/d/117ORoNLZRQ4obb0dmiSxcxMIVQr7uQQc/view?usp=drive_link" 
+                download 
+                class="mt-4 inline-block px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full hover:scale-105 transition-transform"
+            > 📄 Lihat Sertifikat
+            </a>
+            </div>
+
+            <!-- Sertifikat 2 -->
+            <div class="card-glass rounded-2xl p-8 hover-scale">
+            <h3 class="text-xl font-bold mb-2">KELAS ORGANISASI – IMATIKA FT-KMUP</h3>
+            <a 
+                href="https://drive.google.com/file/d/15XTjCV2CDmblOjiQabaPJ2HcppfK-9Vn/view?usp=drive_link" 
+                download 
+                class="mt-4 inline-block px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full hover:scale-105 transition-transform"
+            > 📄 Lihat Sertifikat
+            </a>
+            </div>
+
+        </div>
+        </section>
+
+            <!-- Skills Section -->
+        <section id="skills" class="mb-20 px-4">
+        <h2 class="text-3xl font-bold mb-10 text-center gradient-text">Skills</h2>
+        <div class="grid md:grid-cols-2 gap-12">
+            
+            <!-- Left Column -->
+            <div class="space-y-6">
+            <div>
+                <h3 class="text-xl font-bold mb-2">Web Development</h3>
+                <div class="w-full h-3 bg-gray-700 rounded-full overflow-hidden">
+                <div class="h-full bg-cyan-500 rounded-full transition-all duration-1000 skill-bar" data-width="90%"></div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-2">Back-end</h3>
+                <div class="w-full h-3 bg-gray-700 rounded-full overflow-hidden">
+                <div class="h-full bg-cyan-500 rounded-full transition-all duration-1000 skill-bar" data-width="80%"></div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-2">Programming Languages</h3>
+                <div class="w-full h-3 bg-gray-700 rounded-full overflow-hidden">
+                <div class="h-full bg-cyan-500 rounded-full transition-all duration-1000 skill-bar" data-width="85%"></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="space-y-6">
+            <div>
+                <h3 class="text-xl font-bold mb-2">Applications & Frameworks</h3>
+                <div class="w-full h-3 bg-gray-700 rounded-full overflow-hidden">
+                <div class="h-full bg-cyan-500 rounded-full transition-all duration-1000 skill-bar" data-width="75%"></div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-2">Graphic Design</h3>
+                <div class="w-full h-3 bg-gray-700 rounded-full overflow-hidden">
+                <div class="h-full bg-cyan-500 rounded-full transition-all duration-1000 skill-bar" data-width="70%"></div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-2">Microsoft Office</h3>
+                <div class="w-full h-3 bg-gray-700 rounded-full overflow-hidden">
+                <div class="h-full bg-cyan-500 rounded-full transition-all duration-1000 skill-bar" data-width="95%"></div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+        </section>
+
+
+            <!-- Skill Tags -->
+        <div class="mt-12 flex flex-wrap gap-3 justify-center text-white">
+        <!-- HTML -->
+        <span class="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full transition-transform duration-300 hover:scale-105">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                class="w-5 h-5 transition-transform duration-300 hover:rotate-12" alt="HTML"> HTML
+        </span>
+
+        <!-- CSS -->
+        <span class="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full transition-transform duration-300 hover:scale-105">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                class="w-5 h-5 transition-transform duration-300 hover:rotate-12" alt="CSS"> CSS
+        </span>
+
+        <!-- JavaScript -->
+        <span class="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full transition-transform duration-300 hover:scale-105">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                class="w-5 h-5 transition-transform duration-300 hover:rotate-12" alt="JavaScript"> JavaScript
+        </span>
+
+        <!-- React.js -->
+        <span class="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full transition-transform duration-300 hover:scale-105">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                class="w-5 h-5 transition-transform duration-300 hover:rotate-12" alt="React.js"> React.js
+        </span>
+
+        <!-- MySQL -->
+        <span class="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full transition-transform duration-300 hover:scale-105">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                class="w-5 h-5 transition-transform duration-300 hover:rotate-12" alt="MySQL"> MySQL
+        </span>
+
+        <!-- C++ -->
+        <span class="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full transition-transform duration-300 hover:scale-105">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                class="w-5 h-5 transition-transform duration-300 hover:rotate-12" alt="C++"> C++
+        </span>
+
+        <!-- Python -->
+        <span class="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full transition-transform duration-300 hover:scale-105">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                class="w-5 h-5 transition-transform duration-300 hover:rotate-12" alt="Python"> Python
+        </span>
+
+        <!-- Flutter -->
+        <span class="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full transition-transform duration-300 hover:scale-105">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+                class="w-5 h-5 transition-transform duration-300 hover:rotate-12" alt="Flutter"> Flutter
+        </span>
+
+        <!-- VS Code -->
+        <span class="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full transition-transform duration-300 hover:scale-105">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                class="w-5 h-5 transition-transform duration-300 hover:rotate-12" alt="VS Code"> VS Code
+        </span>
+
+        <!-- Figma -->
+        <span class="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full transition-transform duration-300 hover:scale-105">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+                class="w-5 h-5 transition-transform duration-300 hover:rotate-12" alt="Figma"> Figma
+        </span>
+
+        <!-- Canva -->
+        <span class="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full transition-transform duration-300 hover:scale-105">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg"
+                class="w-5 h-5 transition-transform duration-300 hover:rotate-12" alt="Canva"> Canva
+        </span>
+
+        <!-- Git -->
+        <span class="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full transition-transform duration-300 hover:scale-105">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                class="w-5 h-5 transition-transform duration-300 hover:rotate-12" alt="Git"> Git
+        </span>
+        </div>
+
+
+        </section>
+
+        <br>
+        <br>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mb-20">
+            <h2 class="text-3xl font-bold mb-8 gradient-text text-center">Hubungi Saya</h2>
+            <div class="card-glass rounded-2xl p-8 hover-scale">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Get in Touch</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="text-cyan-400 text-xl mt-1">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Phone</h4>
+                                    <p>+62 812 9810 7031</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="text-cyan-400 text-xl mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Email</h4>
+                                    <p>daffakhairi99@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="text-cyan-400 text-xl mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Location</h4>
+                                    <p>Tangerang Selatan, Indonesia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                    <h3 class="text-xl font-bold mb-4">Send a Message</h3>
+                    <form action="https://formspree.io/f/xzzvgyja" method="POST" class="space-y-4">
+                    <div>
+                        <input type="text" name="name" placeholder="Your Name" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                    </div>
+                    <div>
+                        <input type="email" name="email" placeholder="Your Email" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                    </div>
+                    <div>
+                        <textarea name="message" placeholder="Your Message" rows="4" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+                    </div>
+                    <button type="submit" class="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full font-medium hover:opacity-90 transition-opacity w-full">
+                        Send a quick message to email
+                    </button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800 text-center text-white">
+    <div class="flex justify-center space-x-6 mb-6 text-2xl">
+        <a href="https://github.com/daffakhairi18" target="_blank" aria-label="GitHub"
+        class="hover:text-cyan-400 transition-colors">
+        <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.instagram.com/daffakhairiii/" target="_blank" aria-label="Instagram"
+        class="hover:text-cyan-400 transition-colors">
+        <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/6281298107031" target="_blank" aria-label="WhatsApp"
+        class="hover:text-cyan-400 transition-colors">
+        <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <p class="text-sm text-gray-400">&copy; 2025 Daffa Khairi Albaihaqi. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+        // Animate skill bars on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            
+            const animateSkillBars = () => {
+                skillBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                });
+            };
+            
+            // Intersection Observer for skill bars
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateSkillBars();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            document.querySelector('#skills').querySelectorAll('.skill-bar').forEach(bar => {
+                observer.observe(bar);
+            });
+            
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('.md\\:hidden');
+            const navLinks = document.querySelector('nav');
+            
+            mobileMenuButton.addEventListener('click', () => {
+                navLinks.classList.toggle('hidden');
+                navLinks.classList.toggle('flex');
+                navLinks.classList.toggle('flex-col');
+                navLinks.classList.toggle('absolute');
+                navLinks.classList.toggle('top-16');
+                navLinks.classList.toggle('right-4');
+                navLinks.classList.toggle('bg-gray-900');
+                navLinks.classList.toggle('p-4');
+                navLinks.classList.toggle('rounded-lg');
+                navLinks.classList.toggle('z-50');
+            });
+        });
+    </script>
+</body>
+</html>
